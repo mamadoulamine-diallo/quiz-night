@@ -1,0 +1,150 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2b1331 0%, #3b0f47 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+/* Header */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.nav-button {
+    background: #6935F5;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+/* Titre principal */
+.title-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.title-container h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title-line1 {
+    font-size: 3.5rem;
+    color: #CCCCCC;
+    letter-spacing: 2px;
+}
+
+.title-line2 {
+    font-size: 2rem;
+    color: #CCCCCC;
+}
+
+.title-line3 {
+    font-size: 4rem;
+    color: #FFD700;
+    font-style: italic;
+}
+
+/* Container principal du quiz */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Question container */
+.quiz-container {
+    background: rgba(41, 41, 121, 0.8);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.question {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Timer */
+.timer {
+    background: #FFD700;
+    color: black;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+}
+
+/* Grid des réponses */
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
+}
+
+.answer-button {
+    background: rgba(41, 41, 121, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.answer-button:hover {
+    background: rgba(61, 61, 141, 0.8);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Effets de particules/bokeh */
+.main-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.2) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
