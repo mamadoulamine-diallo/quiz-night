@@ -8,7 +8,6 @@ class PlayerAnswer {
         $this->db = Database::getConnection();
     }
 
-    // Enregistrer la réponse d'un joueur
     public function addPlayerAnswer($playerId, $quizId, $questionId, $responseId) {
         $query = "INSERT INTO playeranswer (PlayerID, QuizID, QuestionID, ResponseID, SubmittedAt) 
                   VALUES (:playerId, :quizId, :questionId, :responseId, NOW())";
@@ -21,7 +20,6 @@ class PlayerAnswer {
         ]);
     }
 
-    // Récupérer toutes les réponses d’un joueur pour un quiz donné
     public function getPlayerAnswers($playerId, $quizId) {
         $query = "SELECT * FROM playeranswer WHERE PlayerID = :playerId AND QuizID = :quizId";
         $stmt = $this->db->prepare($query);

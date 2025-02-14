@@ -1,8 +1,6 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../classes/Database.php';
-
-
 require_once __DIR__ . '/../../classes/Admin.php';
 
 $admin = new Admin($mysqlClient); 
@@ -19,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
         
         if ($admin->login($email, $password)) {
-            header("Location: /quiz-night/admin/index.php"); 
+            header("Location: /quiz-night/public/index.php"); 
             exit();
         } else {
             $errors[] = "Email ou mot de passe incorrect.";

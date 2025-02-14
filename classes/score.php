@@ -8,7 +8,6 @@ class Score {
         $this->db = Database::getConnection();
     }
 
-    // Calculer le score d'un joueur pour un quiz donné
     public function calculateScore($playerId, $quizId) {
         $query = "
             SELECT COUNT(*) as score 
@@ -25,7 +24,6 @@ class Score {
         return $result ? $result['score'] : 0;
     }
 
-    // Enregistrer le score dans la bd
     public function saveScore($playerId, $quizId, $score) {
         $query = "INSERT INTO score (PlayerID, QuizID, Score, SubmittedAt) 
                   VALUES (:playerId, :quizId, :score, NOW())
@@ -38,7 +36,6 @@ class Score {
         ]);
     }
 
-    // Récupérer le score d'un joueur pour un quiz
     public function getScore($playerId, $quizId) {
         $query = "SELECT Score FROM score WHERE PlayerID = :playerId AND QuizID = :quizId";
         $stmt = $this->db->prepare($query);
