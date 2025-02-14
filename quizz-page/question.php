@@ -129,7 +129,7 @@ $currentQuestion = $quizManager->getCurrentQuestion();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizz Night</title>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="question.css">
     <meta http-equiv="refresh" content="1"> <!-- Pour mettre à jour le chronomètre -->
 </head>
 <body>
